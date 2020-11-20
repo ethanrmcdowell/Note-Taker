@@ -4,7 +4,8 @@ let db = require("./db/db");
 let app = express();
 let PORT = 3000;
 
-const notes = [];
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname + "/public/", "index.html"));
@@ -19,10 +20,8 @@ app.get("/api/notes", function(req, res){
 });
 
 app.post("/api/notes", function(req, res){
-    let newNote = req.body;
-    console.log(newNote);
-    notes.push(newNote);
-    res.json(newNote);
+    db.push(req.body);
+    res.json(true);
 });
 
 app.listen(PORT, function(){

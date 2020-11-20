@@ -8,8 +8,8 @@
   <title>Note Taker</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
@@ -39,8 +39,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
   <script>
-
-    $("#save-note").click(function(event){
+    $(".save-note").click(function (event) {
       event.preventDefault();
       let newNote = {
         title: $(".note-title").val().trim(),
@@ -49,15 +48,12 @@
 
       console.log(newNote);
 
-      $.post("/api/notes", newNote, function(data){
-        if(data){
-          alert("Your note has been saved!");
-        } else {
-          alert("Error!");
-      }
+      $.post("/api/notes", newNote, function(data) {
+        $(".note-title").val("");
+        $(".note-textarea").val("");
+      });
     });
-    })
-
   </script>
 </body>
+
 </html>
