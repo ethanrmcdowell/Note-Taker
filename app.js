@@ -14,12 +14,12 @@ app.get("/notes", function(req, res){
     res.sendFile(path.join(__dirname + "/public/", "notes.html"));
 });
 
-app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname + "/public/", "index.html"));
-});
-
 app.get("/api/notes", function(req, res){
     res.json(db);
+});
+
+app.get("*", function(req, res){
+    res.sendFile(path.join(__dirname + "/public/", "index.html"));
 });
 
 app.post("/api/notes", function(req, res){
@@ -29,6 +29,14 @@ app.post("/api/notes", function(req, res){
         if (err) throw err;
         res.json(db);
     })
+});
+
+app.delete("/api/notes/all", function(req, res){
+    db.splice(0, db.length);
+    fs.writeFile("./db/db.json", JSON.stringify(db), function(err){
+        if(err) throw err;
+        res.json(db);
+    });
 });
 
 app.delete("/api/notes/:id", function(req, res){

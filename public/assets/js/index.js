@@ -3,6 +3,7 @@ const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
+const $deleteAll = $(".delete-all");
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
@@ -28,6 +29,14 @@ const saveNote = (note) => {
 const deleteNote = (id) => {
   return $.ajax({
     url: "api/notes/" + id,
+    method: "DELETE",
+  });
+};
+
+//A function for deleting ALL notes from the db
+const deleteAll = () => {
+  return $.ajax({
+    url: "api/notes/all",
     method: "DELETE",
   });
 };
@@ -78,6 +87,16 @@ const handleNoteDelete = function (event) {
     renderActiveNote();
   });
 };
+
+// Delete all notes
+const handleDeleteAll = function (event) {
+  event.stopPropagation();
+  const note = $(".list-group-item");
+  deleteAll(note).then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
+}
 
 // Sets the activeNote and displays it
 const handleNoteView = function () {
@@ -146,6 +165,7 @@ $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
+$deleteAll.on("click", handleDeleteAll);
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();
