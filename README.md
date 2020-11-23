@@ -23,10 +23,15 @@ Are you as disorganized as myself? If so, this app is here to help organize your
   ## DEPENDENCIES
 
   -[Express](https://www.npmjs.com/package/express)
+  
   -[FS](https://www.npmjs.com/package/file-system)
+  
   -[Node](https://www.npmjs.com/package/node)
+  
   -[Nodemon](https://www.npmjs.com/package/nodemon)
+  
   -[Path](https://www.npmjs.com/package/path)
+  
   -[UUID](https://www.npmjs.com/package/uuid)
 
   ## SCREENSHOTS
