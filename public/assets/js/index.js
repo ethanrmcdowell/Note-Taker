@@ -91,11 +91,16 @@ const handleNoteDelete = function (event) {
 // Delete all notes
 const handleDeleteAll = function (event) {
   event.stopPropagation();
+  let deleteConf = confirm("Delete all notes?");
+  if(deleteConf !== true){
+    return;
+  } else {
   const note = $(".list-group-item");
   deleteAll(note).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
+  }
 }
 
 // Sets the activeNote and displays it
