@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+body {
+  background: #044343;
+}
+
 .save-note {
   display: none;
 }
@@ -15,11 +19,22 @@ html, body {
   cursor: pointer;
 }
 
+.navbar {
+  background: #222222;
+}
+
+.navbar-brand {
+  color: #e4e4e4;
+}
+
 .note-textarea, .note-title {
-  color: #000000;
-  width: 100%;
+  color: #e4e4e4;
+  width: 80%;
   outline: none;
   border: none;
+  margin-left: 10%;
+  background: #044343;
+  padding: 20px;
 }
 
 .note-textarea {
@@ -31,11 +46,11 @@ html, body {
 .note-title {
   height: 50px;
   margin-top: 13px;
-  font-size: 3rem;
+  font-size: 2.1rem;
 }
 
 .note-title:read-only, .note-textarea:read-only {
-  color: #757575;
+  color: #e4e4e4;
 }
 
 .list-container .card {
@@ -43,6 +58,7 @@ html, body {
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  background: #045757;
 }
 
 .list-container {
@@ -63,8 +79,22 @@ html, body {
 }
 
 .list-container .list-group-item {
+  border-color: #044343;
   border-left: none;
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+.list-group-item {
+  color: #e4e4e4;
+  background: #045757;
+}
+
+::placeholder {
+  color: #e4e4e4;
+  background: #045757;
+  height: 100px;
+  padding-left: 1%;
+  padding-top: 1%;
 }
