@@ -31,11 +31,11 @@ Are you as disorganized as myself? If so, this app is here to help organize your
 
   ## SCREENSHOTS
 
-  ![Application Title Screen](/public/imagesCapture1.JPG)
+  ![Application Title Screen](./public/imagesCapture1.JPG)
 
-  ![Note Entry Screen](/public/imagesCapture2.JPG)
+  ![Note Entry Screen](./public/imagesCapture2.JPG)
 
-  ![View Note Screen](/public/imagesCapture3.JPG)
+  ![View Note Screen](./public/imagesCapture3.JPG)
 
   ## CONTACT
 
