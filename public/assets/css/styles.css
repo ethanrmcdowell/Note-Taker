@@ -6,6 +6,11 @@ html, body {
 
 body {
   background: #044343;
+  font-family: 'Noto Serif', serif;
+}
+
+.active-note {
+  background: #3a4750 !important;
 }
 
 .save-note {

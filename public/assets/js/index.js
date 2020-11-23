@@ -101,6 +101,8 @@ const handleDeleteAll = function (event) {
 // Sets the activeNote and displays it
 const handleNoteView = function () {
   activeNote = $(this).data();
+  $("li").removeClass("active-note");
+  $(this).addClass("active-note");
   renderActiveNote();
 };
 
